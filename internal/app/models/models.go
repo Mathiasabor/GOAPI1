@@ -1,6 +1,9 @@
 package models
 
-import "time"
+import (
+	"encoding/xml"
+	"time"
+)
 type Categories struct{
 	Id int16
 	Nom string
@@ -32,5 +35,13 @@ type Theses struct{
 type Telecharge struct{
 	Dates time.Time
 	Theses Theses
+}
+
+//course models
+
+type Person struct{
+	XMLName xml.Name `xml :"person"`
+	FirstName string `xml :"firstName,attr"`
+	LastName string `xml :"lastName, attr"`
 }
 
